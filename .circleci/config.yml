@@ -7,7 +7,7 @@ jobs:
   post_question:
     docker:
       # specify the version you desire here
-      - image: circleci/node:12
+      - image: circleci/node:14
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -41,7 +41,7 @@ workflows:
   scheduled_workflow:
     triggers:
       - schedule:
-          cron: "0 * * * 1-5"
+          cron: "0,15,30,45 * * * *"
           filters:
             branches:
               only:
